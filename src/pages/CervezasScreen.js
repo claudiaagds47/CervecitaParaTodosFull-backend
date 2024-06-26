@@ -1,12 +1,13 @@
 import React from 'react'
 import Navigation from '@/components/Navigation'
 
-const Contactanos = () => {
+const index = () => {
   return (
     <>
+      <h1>Cervesita para todos</h1>
       <Navigation/>
     </>
   )
 }
 
-export default Contactanos
+export default index
