@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import styles from "../styles/Home.module.css";
 
 const Banner = () => {
   return (
-    <div>Banner</div>
-  )
-}
+    <div className={styles.banner}>
+      <p>Envío gratis en cada desde $30.000,00 a CABA y GBA</p>
+    </div>
+  );
+};
 
-export default Banner
+export default Banner;
