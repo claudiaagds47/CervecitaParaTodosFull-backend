@@ -34,7 +34,7 @@ const Navigation = () => {
         <Burguer />
       </div>
       
-      <div className={styles.Login}>
+      <div className={styles.Loguin}>
         <Login />
       </div>
 

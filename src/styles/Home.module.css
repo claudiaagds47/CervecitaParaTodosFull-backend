@@ -106,7 +106,7 @@
 }
 .header {
     background-color: black;
-    color: white;
+    color: green;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -116,17 +116,13 @@
     height: 10vh
 }
 @media screen and (width < 768px) {
-    .nav{
-        display: none;;
+    .nav, .Loguin, .Registrarme {
+        display: none;
     }
-    
-       
-    
 }
 @media screen and (width >= 768px) {
     .Burguer{
         display: none;;
-        color: white;
     }
 }
 .containerlogo {
@@ -138,6 +134,7 @@
     justify-content: center;
     align-items: center;
 }
+
 
 
 
@@ -153,8 +150,6 @@
     position: relative;
 }
 .main > Image {
-    
-    
     margin: 0;
     padding: 0;
 }
