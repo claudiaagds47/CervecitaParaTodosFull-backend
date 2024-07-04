@@ -10,32 +10,27 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
-import { Style } from "@mui/icons-material";
-import { styleText } from "util";
-import styles from "../styles/Home.module.css";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-
 export default function TemporaryDrawer() {
-  
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
-  
+
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
-    
+
   React.useEffect(() => {
-      if (isDesktop) {
-        setOpen(false);
-      }
-    }, [isDesktop]);
+    if (isDesktop) {
+      setOpen(false);
+    }
+  }, [isDesktop]);
 
   const DrawerList = (
     <Box
-      sx={{ width: "auto", paddingTop: "20px", paddingBottom: "20px" }}
+      sx={{ width: "auto" }}
       role="presentation"
       onClick={toggleDrawer(false)}
     >
@@ -72,20 +67,17 @@ export default function TemporaryDrawer() {
   return (
     <div className="Burguer">
       <Button onClick={toggleDrawer(true)}>☰</Button>
-
       <Drawer
+        variant="permanent"
         open={open}
         onClose={toggleDrawer(false)}
-        
         sx={{
           "& .MuiDrawer-paper": {
             boxSizing: "border-box",
-            height: "auto",
-            backgroundColor: "#000000",
-            color: "white"
+            width: "auto",
           },
         }}
-        >
+      >
         {DrawerList}
       </Drawer>
     </div>
