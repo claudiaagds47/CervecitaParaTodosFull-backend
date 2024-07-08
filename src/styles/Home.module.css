@@ -1,0 +1,176 @@
+.body{
+    height: 120vh;
+}
+
+/*** Estilos del footer ***/
+
+.containerfooter {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    background-color: black;
+    height: fit-content;
+    margin: 0;
+    padding: 0
+}
+.Parrafofooter {
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.Parrafofooter >p {
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem
+}
+@media screen and (width > 768px) {
+    .Parrafofooter >p {
+        font-size: 1.5rem
+    }
+}
+
+
+/*** Estilos del Contacto ***/
+
+.containerContacto {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: fit-content
+}
+.containerContacto > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%
+}
+.containerContacto>Image {
+    margin: 0;
+    padding: 0
+}
+.Face, .whatsapp, .Map {
+    display: flex;
+    flex-direction: column;
+    color: white
+}
+.Face,
+.whatsapp,
+.Map > p {
+  align-items: center;
+  text-align: center
+}
+@media screen and (width > 768px) {
+    .containerContacto>div {
+        flex-direction: row;
+        column-gap: 0.5rem;
+    }
+    .Face,
+    .whatsapp,
+    .Map {
+     margin: 0;
+     padding: 0;
+    }
+}   
+
+
+/*------------------------------------------*/
+/*** Estilos del Nav ***/
+.nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 10vh
+}
+.nav > a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+.header {
+    background-color: black;
+    color: green;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 10vh
+}
+@media screen and (width < 768px) {
+    .nav, .Loguin, .Registrarme {
+        display: none;
+    }
+}
+@media screen and (width >= 768px) {
+    .Burguer{
+        display: none;
+    }
+}
+.containerlogo {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+.logo{
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+/*-----------------------------------------------------------*/
+/****  Estilos Home  *****/
+
+.main {
+    width: 100%;
+    height: 60vh;
+    background-color: #D98504;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.main > Image {
+    margin: 0;
+    padding: 0;
+}
+
+/*---------------------------------------------------------*/
+/****Estilos Baner****/
+.banner {
+    width: 100%;
+    height:6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D98504;
+}   
+    
+.banner > p {text-align: center;
+    width: 100%;
+    height: 20%;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+}    

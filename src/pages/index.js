@@ -1,20 +1,102 @@
-import React from "react";
-import GlobalStyles from "@/styles/globals";
-import Image from "next/image";
-// STYLES
+import React from 'react'
+// import AlertDialog from '@/Components/organismos/AlertDialog';
+import ModalIndex from '@/Components/organismos/ModalIndex';
+import Navigation from "../Components/Navigation";
+import Footer from "../Components/Footer";
+import Home from "./Home";
+import Banner from "../Components/Banner";
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
 
-const Index = () => {
+
+
+
+
+const index = () => {
   return (
     <>
-      <Image
-        src="/assets/LogoBirrin.png"
-        width={144}
-        height={50}
-        alt="Picture of the author"
-      />
-      <h1 style={[GlobalStyles.title]}>Cervesita para todos</h1>
+      <ModalIndex />
+      <Banner />
+      <Navigation />
+      <Home />
+      <Footer /> 
     </>
   );
-};
+}
 
-export default Index;
+export default index
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React from "react";
+// import Navigation from "../Components/Navigation";
+// import Footer from "../Components/Footer";
+// import Home from "./Home";
+// import Banner from "../Components/Banner";
+
+
+// const index = () => {
+//   return (
+//     <>
+//       <Banner />
+//       <Navigation />
+//       <Home />
+//       <Footer />
+//     </>
+//   );
+// };
+
+// export default index;
+
+
