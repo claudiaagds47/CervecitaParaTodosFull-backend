@@ -1,12 +1,18 @@
 import React from 'react'
-import Navigation from '@/components/Navigation'
+import Navigation from "../Components/Navigation";
+import Footer from "../Components/Footer";
+import Banner from "../Components/Banner";
+
 
 const Cervezas = () => {
   return (
     <>
-      <Navigation/>
+      <Banner />
+      <Navigation />
+      
+      <Footer />
     </>
-  )
+  );
 }
 
 export default Cervezas
