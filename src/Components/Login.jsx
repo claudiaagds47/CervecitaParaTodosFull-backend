@@ -27,7 +27,7 @@ export default function Login() {
   return (
     <React.Fragment>
       <Button variant="outlined" onClick={handleClickOpen}>
-        Loguin
+        Login
       </Button>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Iniciar Sesion</DialogTitle>
