@@ -1,29 +1,36 @@
-
 import Link from "next/link";
-import Logo from "./Logo";
 import NombreEmpresa from "./NombreEmpresa";
 import Login from "./Login";
 import Registrarme from "./Registrarme";
 import Carrito from "./Carrito";
 import styles from "../styles/Home.module.css";
 import Burguer from "./Burguer";
-import { useState } from "react";
-import { useEffect } from "react";
-import BurguerBost from "./BurguerBost";
-import probando from "./probando";
+import Image from "next/image";
+
 
 
 
 const Navigation = () => {
   return (
     <header className={styles.header}>
-      <div className={styles.containerlogo}>
-        <Logo />
-      </div>
+       <div className={styles.containerLogo}>
+        <Image
+          src="Logo.svg"
+          width={100}
+          height={70}
+          alt="logo"
+          objectFit="cover"
+        />
+        <Image
+          src="NombreEmpresa.svg"
+          width={120}
+          height={160}
+          alt="nombre de la empresa"
+          objectFit="cover"
+        />
+      </div> 
 
-      <div className={styles.NombreEmpresa}>
-        <NombreEmpresa />
-      </div>
+      
 
       <nav className={styles.nav}>
         <Link href="/">Home</Link>
