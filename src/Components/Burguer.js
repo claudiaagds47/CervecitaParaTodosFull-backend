@@ -10,12 +10,9 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
-import { Style } from "@mui/icons-material";
-import { styleText } from "util";
-import styles from "../styles/Home.module.css";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-
+import MenuIcon from "@mui/icons-material/Menu";
 
 export default function TemporaryDrawer() {
   
@@ -71,21 +68,24 @@ export default function TemporaryDrawer() {
 
   return (
     <div className="Burguer">
-      <Button onClick={toggleDrawer(true)}>☰</Button>
+      <Button onClick={toggleDrawer(true)}>
+        <MenuIcon
+          sx={{ width: "50px", height: "60px", color: "white" }}
+        />
+      </Button>
 
       <Drawer
         open={open}
         onClose={toggleDrawer(false)}
-        
         sx={{
           "& .MuiDrawer-paper": {
             boxSizing: "border-box",
             height: "auto",
             backgroundColor: "#000000",
-            color: "white"
+            color: "white",
           },
         }}
-        >
+      >
         {DrawerList}
       </Drawer>
     </div>
