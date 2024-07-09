@@ -16,21 +16,19 @@ const Navigation = () => {
        <div className={styles.containerLogo}>
         <Image
           src="Logo.svg"
-          width={100}
-          height={70}
+          width={80}
+          height={80}
           alt="logo"
-          objectFit="cover"
+         
         />
         <Image
           src="NombreEmpresa.svg"
-          width={120}
-          height={160}
+          width={100}
+          height={100}
           alt="nombre de la empresa"
-          objectFit="cover"
+         
         />
       </div> 
-
-      
 
       <nav className={styles.nav}>
         <Link href="/">Home</Link>
