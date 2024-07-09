@@ -1,12 +1,17 @@
-import React from 'react'
-import Navigation from '@/components/Navigation'
+import Maindebuho from "@/Components/Maindebuho";
+import Navigation from "../Components/Navigation";
+import Footer from "../Components/Footer";
+import Banner from "../Components/Banner";
 
-const Cervezas = () => {
+const index = () => {
   return (
     <>
-      <Navigation/>
+      <Banner />
+      <Navigation />
+      <Maindebuho />
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Cervezas
+export default index;
