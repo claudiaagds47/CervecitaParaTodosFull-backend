@@ -5,12 +5,7 @@ import Navigation from "../Components/Navigation";
 import Footer from "../Components/Footer";
 import Home from "./Home";
 import Banner from "../Components/Banner";
-import Button from "@mui/material/Button";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
+import ScrollToTop from "react-scroll-to-top";
 
 
 
@@ -20,10 +15,11 @@ const index = () => {
   return (
     <>
       <ModalIndex />
+      <ScrollToTop smooth color="#D98504" />
       <Banner />
       <Navigation />
       <Home />
-      <Footer /> 
+      <Footer />
     </>
   );
 }
