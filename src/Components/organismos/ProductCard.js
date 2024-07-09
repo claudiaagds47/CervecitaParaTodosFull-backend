@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Image from 'next/image';
-import CardCounter from './CardCounter';
 import CountComponent from '../atomos/CountComponent';
 
 const ProductCard = ({ title, description, imageUrl, precio, id }) => {

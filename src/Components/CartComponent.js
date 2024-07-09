@@ -1,8 +1,8 @@
 //Mapeo Props de cards//
 
 import React, { useEffect } from 'react'
-import ProductCard from './ProductCard'
-import {cardsArray} from "./arrayCards.js";
+import ProductCard from '../Components/organismos/ProductCard';
+import {cardsArray} from '../Components/organismos/arrayCards';
 
 export default function CartComponent() {
 
