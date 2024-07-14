@@ -6,11 +6,7 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import Suscribirse from "./Suscribirse";
-import CustomizedDialogs from "./Exito";
-import Suscribir from "./Exito";
-import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
+
 
 export default function Contactanos() {
   const [open, setOpen] = React.useState(false);
@@ -74,9 +70,7 @@ export default function Contactanos() {
 function MultilineTextFields() {
   return (
     <>
-      <Navigation/>
+      <Navigation />
     </>
-  )
+  );
 }
-
-

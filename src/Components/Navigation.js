@@ -10,44 +10,44 @@ import Image from "next/image";
 
 
 
-const Navigation = () => {
-  return (
-    <header className={styles.header}>
-      <div className={styles.containerLogo}>
-        <Image src="Logo.svg" width={80} height={80} alt="logo" />
-        <Image
-          src="NombreEmpresa.svg"
-          width={100}
-          height={100}
-          alt="nombre de la empresa"
-        />
-      </div>
+ function Navigation() {
+   return (
+     <header className={styles.header}>
+       <div className={styles.containerLogo}>
+         <Image src="Logo.svg" width={80} height={80} alt="logo" />
+         <Image
+           src="NombreEmpresa.svg"
+           width={100}
+           height={100}
+           alt="nombre de la empresa"
+         />
+       </div>
 
-      <nav className={styles.nav}>
-        <Link href="/">Home</Link>
-        <Link href="./Cervezas">Cervezas</Link>
-        <Link href="">Contactanos</Link>
-        <Link href="/Nosotrospage">Nosotros</Link>
-        <Link href="./TiendaOnLineScreen">TiendaOnLine</Link>
-      </nav>
+       <nav className={styles.nav}>
+         <Link href="/">Home</Link>
+         <Link href="./Cervezas">Cervezas</Link>
+         <Link href="">Contactanos</Link>
+         <Link href="/Nosotrospage">Nosotros</Link>
+         <Link href="./TiendaOnLineScreen">TiendaOnLine</Link>
+       </nav>
 
-      <div className={styles.Burguer}>
-        <Burguer />
-      </div>
+       <div className={styles.Burguer}>
+         <Burguer />
+       </div>
 
-      <div className={styles.Loguin}>
-        <Login />
-      </div>
+       <div className={styles.Loguin}>
+         <Login />
+       </div>
 
-      <div className={styles.Registrarme}>
-        <Registrarme />
-      </div>
+       <div className={styles.Registrarme}>
+         <Registrarme />
+       </div>
 
-      <div className={styles.Carrito}>
-        <Carrito />
-      </div>
-    </header>
-  );
-};
+       <div className={styles.Carrito}>
+         <Carrito />
+       </div>
+     </header>
+   );
+ };
 
 export default Navigation;
