@@ -13,29 +13,22 @@ import Image from "next/image";
 const Navigation = () => {
   return (
     <header className={styles.header}>
-       <div className={styles.containerLogo}>
-        <Image
-          src="Logo.svg"
-          width={80}
-          height={80}
-          alt="logo"
-         
-        />
+      <div className={styles.containerLogo}>
+        <Image src="Logo.svg" width={80} height={80} alt="logo" />
         <Image
           src="NombreEmpresa.svg"
           width={100}
           height={100}
           alt="nombre de la empresa"
-         
         />
-      </div> 
+      </div>
 
       <nav className={styles.nav}>
         <Link href="/">Home</Link>
-        <Link href="/">Cervezas</Link>
-        <Link href="/">Contactanos</Link>
-        <Link href="/">Nosotros</Link>
-        <Link href="/">TiendaOnLine</Link>
+        <Link href="./Cervezas">Cervezas</Link>
+        <Link href="">Contactanos</Link>
+        <Link href="/Nosotrospage">Nosotros</Link>
+        <Link href="./TiendaOnLineScreen">TiendaOnLine</Link>
       </nav>
 
       <div className={styles.Burguer}>

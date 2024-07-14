@@ -13,42 +13,48 @@ import MailIcon from "@mui/icons-material/Mail";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import MenuIcon from "@mui/icons-material/Menu";
+import Link from "next/link";
 
 export default function TemporaryDrawer() {
-  
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
-  
+
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
-    
+
   React.useEffect(() => {
-      if (isDesktop) {
-        setOpen(false);
-      }
-    }, [isDesktop]);
+    if (isDesktop) {
+      setOpen(false);
+    }
+  }, [isDesktop]);
 
   const DrawerList = (
     <Box
-      sx={{ width: "auto", paddingTop: "20px", paddingBottom: "20px" }}
+      sx={{ width: "auto", paddingTop: "20px", paddingBottom: "20px", color: "white" }}
       role="presentation"
       onClick={toggleDrawer(false)}
     >
       <List>
-        {["Home", "Cervezas", "Contactanos", "Nosotros", "Tienda om line"].map(
-          (text, index) => (
-            <ListItem key={text} disablePadding>
+        {[
+          { text: "Home", href: "/" },
+          { text: "Cervezas", href: "/Cervezas" },
+          { text: "Contactanos", href: "/Contactanos" },
+          { text: "Nosotros", href: "/Nosotrospage" },
+          { text: "Tienda om line", href: "/TiendaOnLineScreen" },
+        ].map(({ text, href }, index) => (
+          <ListItem key={text} disablePadding>
+            <Link href={href}>
               <ListItemButton>
                 <ListItemIcon>
                   {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                 </ListItemIcon>
                 <ListItemText primary={text} />
               </ListItemButton>
-            </ListItem>
-          )
-        )}
+            </Link>
+          </ListItem>
+        ))}
       </List>
       <Divider />
       <List>
@@ -69,9 +75,7 @@ export default function TemporaryDrawer() {
   return (
     <div className="Burguer">
       <Button onClick={toggleDrawer(true)}>
-        <MenuIcon
-          sx={{ width: "50px", height: "60px", color: "white" }}
-        />
+        <MenuIcon sx={{ width: "50px", height: "60px", color: "white" }} />
       </Button>
 
       <Drawer

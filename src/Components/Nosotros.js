@@ -1,10 +1,11 @@
-import React from 'react'
+import React from "react";
+import style from "../styles/Home.module.css"
 
-const MayoresScreen = () => {
+const Nosotros = () => {
   return (
-       <>
-      <section>
-        <div>
+    <>
+
+        <div className={style.nosotros}>
           <h2>Sobre nosotros</h2>
           <p>
             Somos una Microcerveceria fundada por cuatro amigos: Alex, Maiu,
@@ -12,15 +13,9 @@ const MayoresScreen = () => {
             barrio de Monserrat, corazon de la ciudad de Buenos Aires
           </p>
         </div>
-      </section>
+      
     </>
-  )
-}
+  );
+};
 
-<<<<<<< HEAD:src/pages/MayoresScreen.js
-export default MayoresScreen;
-=======
-export default Nosotros
-
-
->>>>>>> SCRUM-11/Armar-estructura-basica-scareen:src/pages/Nosotros.js
+export default Nosotros;
