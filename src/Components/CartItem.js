@@ -10,7 +10,13 @@ const CartItem = ({ title, description, imageUrl, precio, id }) => {
   return (
     <section style={estilos.card}>
       <div style={estilos.cardContent}>
-        <Image src={imageUrl} alt={title} width={150} height={120} />
+        <Image
+          src={imageUrl}
+          alt={title}
+          width={150}
+          height={120}
+          style={{ objectFit: "cover" }}
+        />
         <div style={estilos.cardText}>
           <h3>{title}</h3>
           <p>{description}</p>

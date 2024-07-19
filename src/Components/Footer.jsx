@@ -1,7 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-
+import InstagramIcon from "@mui/icons-material/Instagram";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 const Footer = () => {
   return (
@@ -14,20 +16,23 @@ const Footer = () => {
       </div>
       <div className={styles.containerContacto}>
         <div className={styles.Face}>
-          <Image src="face.svg" width={30} height={60} />
-          <p className="TextoFace">Cerveceria Birrin</p>
+          <InstagramIcon sx={{ width: "21", height: "60", color: "#57ACD0" }} />
+          <p className="TextoFace" color="#57ACD0">
+            Cerveceria Birrin
+          </p>
         </div>
         <div className={styles.whatsapp}>
-          <Image src="whatsapp.svg" width={30} height={60} />
-          <p className="nWhatsapp">11-1234-5678</p>
+          <WhatsAppIcon sx={{ width: "21", height: "60", color: "#57ACD0" }} />
+          <p >11-1234-5678</p>
         </div>
         <div className={styles.Map}>
-          <Image src="/maps.svg" width={20} height={60} />
+          <LocationOnIcon
+            sx={{ width: "20", height: "60", color: "#57ACD0" }}
+          />
           <p className="TextoMap">Vte. Lopéz, GBA</p>
         </div>
       </div>
     </div>
   );
 };
-
 export default Footer;

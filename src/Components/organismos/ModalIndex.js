@@ -26,9 +26,7 @@ export default function ModalIndex() {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">
-          Bienvenido /*LogoBirrin*/
-        </DialogTitle>
+        <DialogTitle id="alert-dialog-title">Bienvenido</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
             ¿Sos mayor de 18 años?
@@ -36,16 +34,12 @@ export default function ModalIndex() {
         </DialogContent>
 
         <DialogActions>
-          <Button onClick={handleClose}>
-            si
-          </Button>
-          <Link href={"www.google.com"} underline="none">
+          <Button onClick={handleClose}>si</Button>
+          <Link href="https://www.google.com.ar/" underline="always">
             No
           </Link>
         </DialogActions>
-
       </Dialog>
-
     </React.Fragment>
   );
 }

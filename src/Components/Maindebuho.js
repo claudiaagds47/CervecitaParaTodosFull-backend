@@ -23,7 +23,7 @@ const Maindebuho = () => {
         No apta para los que toman juguito
       </div>
       <div className={styles.parrafo2buho}>
-        Incrementa la longuevidad y la energia*+++
+        Incrementa la longevidad y la energia*+++
       </div>
       <div className={styles.Buho}>
         <EmblaCarousel options={OPTIONS} slides={SLIDES} />

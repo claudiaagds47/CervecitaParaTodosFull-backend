@@ -4,7 +4,7 @@ import styles from "../styles/Home.module.css";
 const Banner = () => {
   return (
     <div className={styles.banner}>
-      <p>Envío gratis en cada desde $30.000,00 a CABA y GBA</p>
+      <p>Envío gratis desde $30.000,00 a CABA y GBA</p>
     </div>
   );
 };

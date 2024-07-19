@@ -2,10 +2,11 @@ import Link from "next/link";
 import NombreEmpresa from "./NombreEmpresa";
 import Login from "./Login";
 import Registrarme from "./Registrarme";
-import Carrito from "./Carrito";
+
 import styles from "../styles/Home.module.css";
 import Burguer from "./Burguer";
 import Image from "next/image";
+import ShoppingCart from "./Carrito";
 
 
 
@@ -44,7 +45,7 @@ import Image from "next/image";
        </div>
 
        <div className={styles.Carrito}>
-         <Carrito />
+         <ShoppingCart />
        </div>
      </header>
    );

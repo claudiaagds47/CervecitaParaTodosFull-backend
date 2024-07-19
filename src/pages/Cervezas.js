@@ -3,18 +3,20 @@ import Navigation from "../Components/Navigation";
 import Footer from "../Components/Footer";
 import Banner from "../Components/Banner";
 import React from 'react'
+import CardContextProvider from "../../Context/CardContext";
 
 
-
-const index = () => {
+const Cervezas = () => {
   return (
     <>
-      <Banner />
-      <Navigation />
-      <Maindebuho />
-      <Footer />
+      <CardContextProvider>
+        <Banner />
+        <Navigation />
+        <Maindebuho />
+        <Footer />
+      </CardContextProvider>
     </>
   );
 };
 
-export default index;
+export default Cervezas;

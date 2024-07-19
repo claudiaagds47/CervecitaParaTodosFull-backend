@@ -8,7 +8,13 @@ const ProductCard = ({ title, description, imageUrl, precio, id }) => {
   return (
     <section style={estilos.card}>
       <div style={estilos.cardContent}>
-        <Image src={imageUrl} alt={title} width={250} height={220} />
+        <Image
+          src={imageUrl}
+          alt={title}
+          width={250}
+          height={220}
+          style={{ objectFit: "cover" }}
+        />
         <div style={estilos.cardText}>
           <h3>{title}</h3>
           <p>{description}</p>
@@ -38,6 +44,7 @@ const estilos = {
   },
   cardContent: {
     flexGrow: 1,
+    objectFit: "cover"
   },
   cardText: {
     marginTop: '10px', // Separar el texto de la imagen
