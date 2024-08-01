@@ -9,6 +9,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Registrarme from "./Registrarme";
+import ButtonComponent from "./atomos/Button";
 
 //este componente va en el navegador
 //al clickear en Resgistrarme usar el UseEffect para modificar las propiedades;
@@ -26,9 +27,15 @@ export default function Login() {
 
   return (
     <React.Fragment>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Login
-      </Button>
+      <ButtonComponent
+        title="login"
+        variant="outlined"
+        textColor="primary"
+        borderColor="succes"
+        sx={{width: "100px"}}
+        rounded={true}
+        onClick={handleClickOpen}
+      />
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Iniciar Sesion</DialogTitle>
         <DialogContent>

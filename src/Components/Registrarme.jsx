@@ -7,6 +7,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Checkbox from "@mui/material/Checkbox";
+import ButtonComponent from "./atomos/Button";
 
 export default function Registrarme() {
   const [open, setOpen] = React.useState(false);
@@ -21,9 +22,16 @@ export default function Registrarme() {
 
   return (
     <React.Fragment>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Suscribirme
-      </Button>
+      <ButtonComponent
+
+        title="Register"
+        variant="outlined"
+        textColor="primary"
+        borderColor="succes"
+        sx={{width: "100px", marginLeft: "10px", marginRight: "10px" }}
+        rounded={true}
+        onClick={handleClickOpen}
+      />
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Registrarme</DialogTitle>
         <DialogContent>

@@ -1,10 +1,6 @@
 import React from "react";
-
-//MATRIAL UI
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
-
-// STYLE
 import Default from "@/styles/Default";
 import TextStyles from "@/styles/TextStyle";
 
@@ -12,45 +8,44 @@ const ButtonComponent = ({
   title,
   variant,
   color,
-  textColor, // Opciones: 'primary', 'secondary', 'black', 'success', 'danger'
+  textColor,
   size,
-  sx, // Estilos adicionales, tipo custom
+  sx,
   backgroundColor,
   borderColor,
   hoverOutlined,
-  rounded = false | true,
-  
+  rounded = false,
+  onClick
 }) => {
   const getColor = (color) => {
     switch (color) {
       case "primary":
-        return TextStyles.textPrimary.color || Default.primary;
+        return Default.primary;
       case "black":
-        return TextStyles.textblack.color || Default.black;
+        return Default.black;
       case "white":
-        return TextStyles.textwhite.color || Default.white;
+        return Default.white;
       case "success":
-        return TextStyles.textSucces.color || Default.success;
+        return Default.success;
       case "danger":
-        return TextStyles.textDanger.color || Default.danger;
+        return Default.danger;
       default:
         return "transparent";
     }
   };
 
-  const StyledButton = styled(Button)({
-    color: getColor(textColor), // color de texto según la opción seleccionada
-    backgroundColor: getColor(backgroundColor), // me deja tener el fondo a color personalisable
-    borderColor: getColor(color),
-    borderRadius: rounded == true ? "5px" : "0",
+  const StyledButton = styled(Button)(({ variant }) => ({
+    color: variant === "outlined" ? getColor("primary") : getColor(color),
+    backgroundColor: variant === "contained" ? "transparent" : getColor(backgroundColor),
+    borderColor: variant === "outlined" ? getColor("primary") : getColor(color),
+    borderRadius: rounded ? "5px" : "0",
     "&:hover": {
-      backgroundColor:
-        backgroundColor === "black" ? "#000000" : getColor(color),
-      color: Default.white,
+      backgroundColor: variant === "outlined" ? getColor("primary") : getColor(color),
+      color: variant === "outlined" ? Default.white : getColor(textColor),
       borderColor: getColor(color),
     },
     ...sx,
-  });
+  }));
 
   return (
     <StyledButton
@@ -60,6 +55,7 @@ const ButtonComponent = ({
       borderColor={borderColor}
       hoverOutlined={hoverOutlined}
       rounded={rounded}
+      onClick={onClick}
     >
       {title}
     </StyledButton>
