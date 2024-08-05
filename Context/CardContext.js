@@ -174,10 +174,10 @@ export default function CardContextProvider({ children }) {
       cardsArray: "http://localhost:5000/cardsArray",
       items: "http://localhost:5000/items",
     };
-    const responseProducts = await axios.get(ENDPOINT.cardsArray),
-      responseCart = await axios.get(ENDPOINT.items);
-    const cardsList = await responseProducts.data,
-      itemsList = await responseCart.data;
+   // const responseProducts = await axios.get(ENDPOINT.cardsArray),
+    //  responseCart = await axios.get(ENDPOINT.items);
+   // const cardsList = await responseProducts.data,
+    //  itemsList = await responseCart.data;
 
     // console.log(productsList);
     // console.log(cartItems);

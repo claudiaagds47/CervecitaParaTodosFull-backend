@@ -10,6 +10,7 @@ import Checkbox from "@mui/material/Checkbox";
 import ButtonComponent from "./atomos/Button";
 
 export default function Registrarme() {
+  
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -46,6 +47,7 @@ export default function Registrarme() {
             type="email"
             fullWidth
             variant="standard"
+            
           />
         </DialogContent>
 
@@ -61,6 +63,7 @@ export default function Registrarme() {
             type="password"
             fullWidth
             variant="standard"
+            
           />
         </DialogContent>
 
