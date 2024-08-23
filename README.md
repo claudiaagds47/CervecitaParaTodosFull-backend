@@ -10,6 +10,8 @@ Proyecto final de backend Academia Numen, desde la App Mobile Cervecita para tod
 
 -Carpeta routes: aca se definen las URN que el Frontend pueda pedir
 
+-Carpeta server: es el servidor
+
 -Carpeta validations: si los datos que ingresa el usuario (email y contraseña) no son correctos se tira un error
 
--Archivo db.js: es la conexion a la base de datos
+-Archivo db.js: es la conexion a la base de datos con mongo

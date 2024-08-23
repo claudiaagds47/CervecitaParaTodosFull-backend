@@ -7,24 +7,14 @@ import Banner from "../Components/Banner";
 import ScrollToTop from "react-scroll-to-top";
 import CartComponent from "../Components/CartComponent";
 import CardContextProvider from "../../Context/CardContext";
-import {createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Login from "@/Components/Login";
 import Registrarme from "@/Components/organismos/Registrarme";
-import { connectDB } from "@/db";
-import  express from 'express';
-// import router from "@/routes/auth.routes"; 
-import morgan from 'morgan';
+import server from "../../Backend/server/server";
+import { connectDb } from "../../Backend/dbMongo/dbMongo";
 
-
-const app= express();
-connectDB();
-app.listen (4000, ()=>{
-console.log('server on port', 4000 )});
-app.use (morgan('dev'));
-
-// app.use ("/api", authRoutes);
-
-// app.use (express.json())
+connectDb();
+server.listen(4000)
+ console.log("servidor corriendo en puerto 4000",4000)
 
 
 const index = () => {
