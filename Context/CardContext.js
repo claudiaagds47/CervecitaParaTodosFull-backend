@@ -1,4 +1,4 @@
-//Context para cards y carrito//
+
 "use client";
 import { createContext, useReducer, useEffect } from "react";
 import axios from "axios";
@@ -14,7 +14,7 @@ const shoppingInitialState = {
 };
 
 function shoppingCartReducer(state, action) {
-  // console.log(cardsArray);
+  
   if (action.type === "ADD_ITEM") {
     const updatedItems = [...state.items];
 
@@ -49,12 +49,18 @@ function shoppingCartReducer(state, action) {
     };
   }
 
+  if (action.type === "SET_ITEMS") {
+    return {
+      ...state,
+      items: action.payload.items,
+    };
+  }
+
   if (action.type === "READ_STATE") {
     return {
       ...state,
       cardsArray: action.payload.cardsArray,
-      items: action.payload.items,
-    };
+       };
   }
 
   if (action.type === "UPDATE_ITEM") {
@@ -88,32 +94,63 @@ export default function CardContextProvider({ children }) {
     shoppingCartReducer,
     shoppingInitialState
   );
-  const { cardsArray, items } = shoppingCartState;
+  const { cardsArray, items, currentPromo } = shoppingCartState;
+  useEffect(() => {
+    const hasItems =
+      Array.isArray(shoppingCartState?.items) &&
+      shoppingCartState?.items.length;
+
+    if (hasItems) {
+      console.log("Saving state in local storage");
+      localStorage.setItem(
+        "cartItemsState",
+        JSON.stringify(shoppingCartState?.items)
+      );
+    }
+  }, [shoppingCartState]);
+
+  useEffect(() => {
+    const notHasItems =
+      Array.isArray(shoppingCartState?.items) &&
+      !shoppingCartState?.items.length;
+
+    if (notHasItems) {
+      const state = localStorage.getItem("cartItemsState");
+      const cartState = JSON.parse(state || "[]");
+      if (state)
+        shoppingCartDispatch({
+          type: "SET_ITEMS",
+          payload: {
+            items: cartState,
+          },
+        });
+    }
+  }, []);
+
   const readState = async () => {
     const ENDPOINT = {
       cardsArray: "http://localhost:5000/cardsArray",
-      items: "http://localhost:5000/items",
     };
-   const responseProducts = await axios.get(ENDPOINT.cardsArray),
-     responseCart = await axios.get(ENDPOINT.items);
-    const cardsList = await responseProducts.data,
-     itemsList = await responseCart.data;
+    try {
+      const responseProducts = await axios.get(ENDPOINT.cardsArray);
+      const cardsList = await responseProducts.data;
 
-    // console.log(productsList);
-    // console.log(cartItems);
-    shoppingCartDispatch({
-      type: "READ_STATE",
-      payload: {
-        cardsArray: cardsList,
-        items: itemsList,
-      },
-    });
+      shoppingCartDispatch({
+        type: "READ_STATE",
+        payload: {
+          cardsArray: cardsList,
+        },
+      });
+    } catch (e) {
+      console.log(e);
+    }
+
+   
   };
 
   useEffect(() => {
     readState();
   }, []);
-  //console.log(shoppingCartState);
 
   function handleAddItemToCart(id) {
     shoppingCartDispatch({
@@ -132,14 +169,46 @@ export default function CardContextProvider({ children }) {
     });
   }
 
+  function handleEmptyCart() {
+    localStorage.setItem("cartItemsState", JSON.stringify([]));
+    shoppingCartDispatch({
+      type: "SET_ITEMS",
+      payload: {
+        items: [],
+      },
+    });
+  }
+
+  async function handleGetPromo() {
+    const ENDPOINT = {
+      promo: "http://localhost:4000/promo",
+    };
+    try {
+      const responsePromo = await axios.get(ENDPOINT.promo);
+      console.log("responsePromo", responsePromo);
+
+      shoppingCartDispatch({
+        type: "SET_PROMO",
+        payload: {
+          currentPromo: {},
+        },
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
   const ctxValue = {
     items: items,
     addItemToCart: handleAddItemToCart,
     updateItemQuantity: handleUpdateCartItemQuantity,
+    emptyCart: handleEmptyCart,
+    getPromo: handleGetPromo,
+    currentPromo,
   };
-  // useEffect(() => {
-  //   updateQuote(shoppingCartDispatch);
-  // }, []);
+  
 
-  return <CardContext.Provider value={ctxValue}>{children}</CardContext.Provider>;
+  return (
+    <CardContext.Provider value={ctxValue}>{children}</CardContext.Provider>
+  );
 }

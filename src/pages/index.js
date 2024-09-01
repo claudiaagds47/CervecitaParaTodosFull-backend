@@ -9,12 +9,7 @@ import CartComponent from "../Components/CartComponent";
 import CardContextProvider from "../../Context/CardContext";
 import Login from "@/Components/Login";
 import Registrarme from "@/Components/organismos/Registrarme";
-import server from "../../Backend/server/server";
-import { connectDb } from "../../Backend/dbMongo/dbMongo";
 
-connectDb();
-server.listen(4000)
- console.log("servidor corriendo en puerto 4000",4000)
 
 
 const index = () => {

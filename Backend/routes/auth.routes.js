@@ -1,17 +1,13 @@
-import {Router} from 'express';
-import { login, register,logout, profile } from '../controllers/auth.controllers';
-import { authRequired } from '../middlewares/validateToken';
-const router= Router();
 
 
-// aca van las funciones que dan las respuestas a las peticiones de los controladores(los endpoints)
+const {adduserController} = require(`../controllers/userController.js`)
+const express = require(`express`)
+const router = express.Router()
+router.get (`/prueba`,(__,res)=>{
+res.send(`bienvenido`)    
+ })
+router.post(`/addcard`, adduserController)
+router.get	
 
-router.get('/api/register', register);
-    
-router.post ('/api/login',login);
 
-router.post ("/api/logout", logout);
-
-router.get ("/api/profile", authRequired, profile);
-
-export default router;
+ module.exports = router;
