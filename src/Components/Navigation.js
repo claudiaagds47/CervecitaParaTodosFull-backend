@@ -27,8 +27,8 @@ import ShoppingCart from "./Carrito";
        <nav className={styles.nav}>
          <Link href="/">Home</Link>
          <Link href="./Cervezas">Cervezas</Link>
-         <Link href="">Contactanos</Link>
          <Link href="/Nosotrospage">Nosotros</Link>
+         <Link href="./Contacto">Contacto</Link>
          <Link href="./TiendaOnLineScreen">TiendaOnLine</Link>
        </nav>
 

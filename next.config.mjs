@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  crossOrigin: 'anonymous',
   webpack: (config, { isServer }) => {
     
     // If client-side, don't polyfill `fs`

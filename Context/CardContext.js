@@ -102,6 +102,8 @@ export default function CardContextProvider({ children }) {
 
     if (hasItems) {
       console.log("Saving state in local storage");
+      console.log("aca");
+      console.log("ShoppingCartState");
       localStorage.setItem(
         "cartItemsState",
         JSON.stringify(shoppingCartState?.items)

@@ -2,9 +2,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-// const process = require("dotenv").config();
-// const userModel = require("userModel");
-// const loginMiddleware= require ("loginMiddleware");
+const process = require("dotenv").config();
+
 
 
 const app= express();
@@ -15,25 +14,44 @@ app.use(cors());
 
 module.exports= app;
 
+//middlewares
+
+const loginMiddleware = (req, res, next) => {
+
+  console.log(`${req.method} request for '${req.url}'`);
+   next();
+  };
+ 
+ app.use(loginMiddleware);
+
+
+//models
+
+const User = mongoose.model("User", {
+  name: String,
+  email: String,
+ password: String,
+  });
+
+  const Register = mongoose.model("Register", {
+    email: String,
+   password: String,
+    });
+
 
 
 // conectando con base de datos
-mongoose
- .connect(
+ mongoose.connect(
     'mongodb+srv://claudiaagds47:azcuenaga62@cluster0.esy457n.mongodb.net/',
-
-   {
-    useNewUrlParser: true,
-   useUnifiedTopology: true,
-    }
+   {}
   )
-  .then(() => console.log("Conectado a MongoDB Atlas"))
- .catch((error) => console.error("Error al conectar a MongoDB Atlas", error));
+  .then(() => console.log("Successfully connected to MongoDB"))
+ .catch((error) => console.error("Error to connected to MongoDB ", error));
 
 
 
 // Ruta para obtener todos los usuarios
-app.get("/Contactanos", async (req, res) => {
+app.get("/Contacto", async (req, res) => {
   try {
    const usuarios = await User.find();
    res.json(usuarios);
@@ -42,8 +60,8 @@ app.get("/Contactanos", async (req, res) => {
  }
 });
 
- // Ruta para crear un usuario
-app.post("/Contactanos", async (req, res) => {
+ // Ruta para crear un usuario en contacto
+app.post("/Contacto", async (req, res) => {
  const { name, email, password } = req.body;
   const usuario = new User({ name, email, password });
   try {
@@ -54,9 +72,21 @@ app.post("/Contactanos", async (req, res) => {
   }
  });
 
+  // Ruta para crear un usuario en registrame
+app.post("/api/Register", async (req, res) => {
+  const { email, password } = req.body;
+   const register = new Register({email, password });
+   try {
+    await register.save();
+    res.status(201).json(register);
+   } catch (error) {
+    res.status(400).json({ message: "Error al crear usuario", error });
+   }
+  });
+
 
 // Ruta para actualizar un usuario
-app.put("/Contactanos/:id", async (req, res) => {
+app.put("/Contacto/:id", async (req, res) => {
    const { id } = req.params;
   const { name, email, password } = req.body;
  try {
@@ -75,7 +105,7 @@ app.put("/Contactanos/:id", async (req, res) => {
  });
 
 // Ruta para eliminar un usuario
-app.delete("/Contactanos/:id", async (req, res) => {
+app.delete("/Contacto/:id", async (req, res) => {
   const { id } = req.params;
   try {
    console.log("trying to delete user");
@@ -108,5 +138,5 @@ app.delete("/Contactanos/:id", async (req, res) => {
 
 
 app.listen(port, () => {
-  console.log(`Servidor iniciado en el puerto ${port}`);
+  console.log(`Server on port ${port}`);
  });
