@@ -31,9 +31,8 @@ export default function Login() {
         title="login"
         variant="outlined"
         textColor="primary"
-        borderColor="succes"
-        sx={{width: "100px"}}
-        rounded={true}
+        sx={{ width: "100px" }}
+        rounded={1.2}
         onClick={handleClickOpen}
       />
       <Dialog open={open} onClose={handleClose}>

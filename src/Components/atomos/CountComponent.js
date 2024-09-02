@@ -31,11 +31,11 @@ export default function CountComponent({ id, precios }) {
           sx={{
             borderTopLeftRadius: "10px",
             borderBottomLeftRadius: "10px",
-            borderColor: "#57ACD0",
+            bordercolor: "#57ACD0",
             borderWidth: "2px",
             color: "#57ACD0",
             "&:hover": {
-              borderColor: "#57ACD0",
+              bordercolor: "#57ACD0",
               borderWidth: "2px",
               backgroundColor: "rgba(87, 172, 208, 0.3)",
             },
@@ -49,11 +49,11 @@ export default function CountComponent({ id, precios }) {
           sx={{
             borderTopRightRadius: "10px",
             borderBottomRightRadius: "10px",
-            borderColor: "#57ACD0",
+            bordercolor: "#57ACD0",
             borderWidth: "2px",
             color: "#57ACD0",
             "&:hover": {
-              borderColor: "#57ACD0",
+              bordercolor: "#57ACD0",
               borderWidth: "2px",
               backgroundColor: "rgba(87, 172, 208, 0.3)",
             },

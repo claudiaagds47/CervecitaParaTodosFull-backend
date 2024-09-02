@@ -12,8 +12,8 @@ const ButtonComponent = ({
   size,
   sx,
   backgroundColor,
-  borderColor,
-  hoverOutlined,
+  bordercolor,
+  hoveroutlined,
   rounded = false,
   onClick
 }) => {
@@ -37,12 +37,12 @@ const ButtonComponent = ({
   const StyledButton = styled(Button)(({ variant }) => ({
     color: variant === "outlined" ? getColor("primary") : getColor(color),
     backgroundColor: variant === "contained" ? "transparent" : getColor(backgroundColor),
-    borderColor: variant === "outlined" ? getColor("primary") : getColor(color),
+    bordercolor: variant === "outlined" ? getColor("primary") : getColor(color),
     borderRadius: rounded ? "5px" : "0",
     "&:hover": {
       backgroundColor: variant === "outlined" ? getColor("primary") : getColor(color),
       color: variant === "outlined" ? Default.white : getColor(textColor),
-      borderColor: getColor(color),
+      bordercolor: getColor(color),
     },
     ...sx,
   }));
@@ -52,8 +52,8 @@ const ButtonComponent = ({
       variant={variant}
       size={size}
       color={color}
-      borderColor={borderColor}
-      hoverOutlined={hoverOutlined}
+      bordercolor={bordercolor}
+      hoveroutlined={hoveroutlined}
       rounded={rounded}
       onClick={onClick}
     >

@@ -36,7 +36,7 @@ export default function Registrarme() {
       return;
     }
 
-    const response = await fetch('http://localhost:4000/api/register', {
+    const response = await fetch('api/register', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -45,7 +45,7 @@ export default function Registrarme() {
     });
 
     const data = await response.json();
-
+    console.log(data)
     if (response.ok) {
       alert(data.message);
       handleClose(); // Cerrar el diálogo al éxito

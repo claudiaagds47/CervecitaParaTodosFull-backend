@@ -14,7 +14,7 @@ const shoppingInitialState = {
 };
 
 function shoppingCartReducer(state, action) {
-  
+
   if (action.type === "ADD_ITEM") {
     const updatedItems = [...state.items];
 
@@ -60,7 +60,7 @@ function shoppingCartReducer(state, action) {
     return {
       ...state,
       cardsArray: action.payload.cardsArray,
-       };
+    };
   }
 
   if (action.type === "UPDATE_ITEM") {
@@ -102,6 +102,8 @@ export default function CardContextProvider({ children }) {
 
     if (hasItems) {
       console.log("Saving state in local storage");
+      console.log("aca")
+      console.log(shoppingCartState)
       localStorage.setItem(
         "cartItemsState",
         JSON.stringify(shoppingCartState?.items)
@@ -115,8 +117,8 @@ export default function CardContextProvider({ children }) {
       !shoppingCartState?.items.length;
 
     if (notHasItems) {
-      const state = localStorage.getItem("cartItemsState");
-      const cartState = JSON.parse(state || "[]");
+      // const state = localStorage.getItem("cartItemsState");
+      const cartState = {}
       if (state)
         shoppingCartDispatch({
           type: "SET_ITEMS",
@@ -145,7 +147,7 @@ export default function CardContextProvider({ children }) {
       console.log(e);
     }
 
-   
+
   };
 
   useEffect(() => {
@@ -206,7 +208,7 @@ export default function CardContextProvider({ children }) {
     getPromo: handleGetPromo,
     currentPromo,
   };
-  
+
 
   return (
     <CardContext.Provider value={ctxValue}>{children}</CardContext.Provider>
