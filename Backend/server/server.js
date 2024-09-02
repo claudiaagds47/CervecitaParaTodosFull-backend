@@ -2,9 +2,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const process = require("dotenv").config();
-const userModel = require("userModel");
-const loginMiddleware= require ("loginMiddleware");
+// const process = require("dotenv").config();
+// const userModel = require("userModel");
+// const loginMiddleware= require ("loginMiddleware");
 
 
 const app= express();
@@ -13,7 +13,7 @@ const port = 4000;
 app.use(express.json());
 app.use(cors());
 
-export default app;
+module.exports= app;
 
 
 
