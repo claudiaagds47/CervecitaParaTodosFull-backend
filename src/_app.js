@@ -3,7 +3,7 @@ import "@/styles/globals.js";
 import "@/styles/Default.js";
 import GlobalStyle from "./styles/GlobalStyle";
 import morgan from 'morgan';
-import authRoutes from '../Backend/routes/index.js'
+import authRoutes from './routes/index.js'
 
 
  

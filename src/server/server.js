@@ -1,6 +1,6 @@
 const express = require('express');
 const server = express();
-const routes = require (`../router/router`);
+const routes = require (`../routes/auth.routes`);
 
 server.use (`/`, routes);
 
